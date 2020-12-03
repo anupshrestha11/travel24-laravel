@@ -1,0 +1,23 @@
+.main__footer {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #dae0e2;
+  h5 {
+    font-size: larger;
+    margin: 0;
+  }
+  .contacts,
+  .affilates {
+    width: 300px;
+    text-align: center;
+  }
+  .contact__detail,
+  .affilates__detail {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+  }
+}

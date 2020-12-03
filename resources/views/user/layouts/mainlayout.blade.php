@@ -41,19 +41,32 @@
     </div>
     <nav>
       <ul class="nav__items">
-        <li class="nav__link">
+        <li class="nav__link dropdown">
           <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
             Destination
+
+            <ul class="dropdown-menu dropdown-menu-right bg-transparent "
+              style="background-color: white !important; color: black !important;">
+              @foreach($countries as $country)
+              <li>
+                <a class="dropdown-item dropdown-toggle" href="{{route('view.package',$country->id)}}">
+                  {{$country->countryname}}</a>
+                @if ($country->countrydestinations()->get())
+                <ul class="submenu submenu-left dropdown-menu bg-transparent" style="left:100%; top: -10px;">
+                  @foreach ($country->countrydestinations()->get()->take(5) as $package)
+                  <li>
+                    <a class="dropdown-item" href="{{route('view.destination',$package->id)}}">{{$package->title}}</a>
+                  </li>
+                  @endforeach
+                </ul>
+                @endif
+
+
+              </li>
+              @endforeach
           </div>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            @foreach($countries as $country)
-            <a href="{{route('view.package',$country->id)}}" class="dropdown-item" type="button">
-              {{$country->countryname}}
-            </a>
-            <div class="dropdown-divider"></div>
-            @endforeach
-          </div>
+
         </li>
         <li class="nav__link"><a href="#">About us</a></li>
         <li class="nav__link"><a href="{{route('view.contactus')}}">Contact us</a></li>
@@ -68,7 +81,6 @@
           data-target="#destinations">Destinations <i class="fas fa-chevron-down rotate"></i></a>
         <ul id="destinations" class="collapse p-0">
           @foreach($countries as $country)
-
           <li class="nav-item list-unstyled">
             <a href="{{route('view.package',$country->id)}}" class="nav-link">{{$country->countryname}}</a>
           </li>
