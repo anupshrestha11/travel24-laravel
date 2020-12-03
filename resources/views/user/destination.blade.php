@@ -7,7 +7,7 @@
     <img src="{{url('/countrydestimage'.'/'.$destination->imagename)}}" class="banner__img" alt="" />
     <h1 class="heading">{{$destination->title}}</h1>
   </div>
-  <div class="bg-light w-100 shadow text-uppercase sticky-top" style="top: 60px">
+  <div class="bg-light w-100 shadow text-uppercase sticky-top" style="top: 70px; z-index: 10000;">
     <ul class="container p-0 d-flex justify-content-between py-2 my-0 flex-md-row flex-column text-center">
       <li class="list-unstyled ">
         <a href="#introduction" class="btn btn-light">Introduction</a>

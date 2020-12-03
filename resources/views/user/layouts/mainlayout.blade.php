@@ -25,12 +25,12 @@
   <header class="main__header
     
    @if(!Request::is('/'))
-    scrolled remove-fixed top-sticky
+    scrolled remove-fixed top-sticky shadow-none
     @endif
-    " id="main__header">
+    " id="main__header" style="z-index: 100000">
     <div class="logo__wrapper">
       <a href="/" class="logo__btn">
-        <img class="logo"><img src="{{ asset('logo.jpg') }}"
+        <img class="logo"><img src="{{ asset('logo.png') }}"
           style="width: 150px; height: 70px; object-fit: cover; margin: -40px 0;" alt="travel 24 logo ">
       </a>
     </div>

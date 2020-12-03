@@ -30,7 +30,7 @@
         href="{{route('admin.dashboard')}}">
         <div class="sidebar-brand-icon  overflow-hidden">
           <!-- ! logo -->
-          <img src="{{ asset('logo.jpg') }}" class="img-fluid" alt="">
+          <img src="{{ asset('logo.png') }}" class="img-fluid" alt="">
         </div>
         <!-- ! title -->
       </a>
