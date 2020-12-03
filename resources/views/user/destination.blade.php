@@ -50,7 +50,7 @@
           <h4>Trip Introduction</h4>
           <div class="intro__content">
             <p>
-              {{$destination->tripintroduction}}
+              {!! $destination->tripintroduction !!}
             </p>
 
           </div>

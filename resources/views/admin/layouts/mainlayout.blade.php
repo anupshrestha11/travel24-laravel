@@ -417,6 +417,14 @@
     <script src="{{asset('js/admin/vendor/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('/js/admin/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+      tinymce.init({
+        selector: '#introduction'
+      });
+    </script>
+
     <script src="{{asset('js/admin/main.js')}}"></script>
 </body>
 
