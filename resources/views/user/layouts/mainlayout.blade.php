@@ -52,7 +52,7 @@
               <li>
                 <a class="dropdown-item dropdown-toggle" href="{{route('view.package',$country->id)}}">
                   {{$country->countryname}}</a>
-                @if ($country->countrydestinations()->get())
+                @if (count($country->countrydestinations()->get())>0)
                 <ul class="submenu submenu-left dropdown-menu bg-transparent" style="left:100%; top: -10px;">
                   @foreach ($country->countrydestinations()->get()->take(5) as $package)
                   <li>
