@@ -3,6 +3,7 @@
 *::after {
   position: relative;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -531,7 +532,7 @@ body {
 
 @media screen and (min-width: 1200px) {
   .intro__section .sub__heading h2 {
-    margin: 50px auto;
+    margin: 50px auto 30px;
   }
 
   .intro__text {

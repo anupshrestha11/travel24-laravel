@@ -9,7 +9,7 @@
       <p class="tagline">
     Travel 24 Line Here
       </p>
-      <button class="booknow__btn">Book Now</button>
+      <button onclick="location.href = '#top_destinations'" class="booknow__btn" style="font-size: 1.3rem; ">Our Top Destinations <br>&darr;</button>
     </section>
 
     <section class="intro__section">
@@ -49,17 +49,26 @@
       <div class="dist">
         @foreach ($frontDest as $dest)
             
-        <div class="dist__card">
-          <img src="{{url('/countrydestimage'.'/'.$dest->imagename)}}" alt="" class="dist__img" />
+       <div class="dist__card">
+          <a href="{{route('view.destination',$dest->id)}}"
+            ><img src="{{url('/countrydestimage'.'/'.$dest->imagename)}}" alt="" class="dist__img" />
+            <span class="material-icons rating"
+              >star star star star star_half</span
+            >
+          </a>
           <div class="dist__content">
             <div class="dist__name">
-              <strong>{{$dest->title}}</strong>
+              <a href="destination.html"
+                ><strong>{{$dest->title}}</strong></a
+              >
             </div>
-            <div class="dist__text">
-             {{$dest->tripintroduction}}
+            <div class="dist__detail">
+              <p><strong>Duration: </strong> {{$dest->duration}}</p>
+              <p><strong>Difficulty: </strong> {{$dest->difficulty}}</p>
+              <p><strong>Price: </strong><span class="price"> {{$dest->price}}</span></p>
             </div>
-            <a href="#" class="dist__btn">Read More</a>
           </div>
+        <a href="{{route('view.destination',$dest->id)}}" class="dist__booknow">Book now</a>
         </div>
         @endforeach
       
@@ -67,7 +76,7 @@
       </div>
     </section>
 
-    <section class="dist__section">
+    <section class="dist__section" id="top_destinations">
       <div class="sub__heading">
         <h3>Top Destinations</h3>
       </div>
@@ -102,7 +111,7 @@
       </div>
     </section>
 
-    <section class="testimomial__section">
+    {{-- <section class="testimomial__section">
       <div class="sub__heading">
         <h3>What Our Client Say</h3>
       </div>
@@ -147,6 +156,6 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
 @endsection
