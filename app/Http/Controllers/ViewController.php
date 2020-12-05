@@ -19,14 +19,14 @@ class ViewController extends Controller {
     public function contactUs() {
         return view('user.contact');
     }
-    public function package($id) {
-        $country     = Country::findOrFail($id);
+    public function package($slug) {
+        $country     = Country::where('slug', $slug)->get()[0];
         $packageDest = $country->countrydestinations()->get();
         return view('user.packages', compact('packageDest', 'country'));
     }
 
-    public function destination($id) {
-        $destination = CountryDestination::findOrFail($id);
+    public function destination($slug) {
+        $destination = CountryDestination::where('slug', $slug)->get()[0];
         return view('user.destination', compact('destination'));
     }
 

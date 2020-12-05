@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     //
- protected $fillable=['countryname','imagename'];
+ protected $fillable=['countryname','imagename','slug'];
  public static function boot()
  {
      parent::boot();
