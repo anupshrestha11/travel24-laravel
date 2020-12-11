@@ -60,4 +60,13 @@ class ViewController extends Controller {
 
     }
 
+    public function gallery(Request $request) {
+
+        $gallerydir = public_path('gallery');
+
+        $images = array_diff(scandir($gallerydir), array('.', '..'));
+
+        return view('user.gallery')->with("images", $images);
+    }
+
 }

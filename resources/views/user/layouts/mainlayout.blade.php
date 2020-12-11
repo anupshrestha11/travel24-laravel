@@ -28,7 +28,7 @@
     " id="main__header" style="z-index: 100000">
         <div class="logo__wrapper">
             <a href="/" class="logo__btn">
-                <img class="logo"><img src="{{ asset('logo.png') }}" style="width: 150px; height: 70px; object-fit: cover; margin: -40px 0;" alt="travel 24 logo ">
+                <img class="logo"><img src="{{ asset('logo.png') }}" style=" height: 95px; object-fit: contain; margin: -50px -10px; transform: scale(1.1);" alt="travel 24 logo ">
             </a>
         </div>
         <div class="burger" id="burger__menu">
@@ -38,6 +38,7 @@
         </div>
         <nav>
             <ul class="nav__items">
+                <li class="nav__link"><a href="/#intro">About us</a></li>
                 <li class="nav__link dropdown">
                     <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Destination
@@ -63,9 +64,9 @@
 
 
                 </li>
-                <li class="nav__link"><a href="#">About us</a></li>
+                <li class="nav__link"><a href="{{route('view.gallery')}}">Our Gallery</a></li>
                 <li class="nav__link"><a href="{{route('view.contactus')}}">Contact us</a> </li>
-                <li class="nav__link"><a href="#">Menu</a></li>
+
             </ul>
         </nav>
     </header>
@@ -83,12 +84,24 @@
             </li>
             <li class="nav__link"><a href="#">About us</a></li>
             <li class="nav__link"><a href="{{route('view.contactus')}}">Contact us</a></li>
-            <li class="nav__link"><a href="#">Menu</a></li>
+            <li class="nav__link"><a href="#">Our Gallery</a></li>
         </ul>
     </div>
     <div class="backdrop" id="backdrop"></div>
 
     @yield('content')
+
+    <section class="my-4 py-4">
+        <h3 class="text-center my-4 font-weight-bolder">Our Affilates</h3>
+        <ul class="list-unstyled d-flex justify-content-around">
+            <li class="d-block">Affilates 1</li>
+            <li class="d-block">Affilates 1</li>
+            <li class="d-block">Affilates 1</li>
+            <li class="d-block">Affilates 1</li>
+            <li class="d-block">Affilates 1</li>
+            <li class="d-block">Affilates 1</li>
+        </ul>
+    </section>
 
     <footer class="main__footer">
         <div class="contacts">
@@ -99,14 +112,7 @@
                 <p>{{$contact->address}}</p>
             </div>
         </div>
-        <div class="affilates">
-            <h5>Our Affilates</h5>
-            <div class="affilates__detail">
-                <p>affilates</p>
-                <p>affilates</p>
-                <p>affilates</p>
-            </div>
-        </div>
+
     </footer>
 
     <script src="{{asset('/js/user/script.js')}}"></script>

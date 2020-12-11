@@ -8,15 +8,17 @@
     <p class="tagline">
         Travel 24 Line Here
     </p>
-    <button onclick="location.href = '#top_destinations'" class="booknow__btn" style="font-size: 1.3rem; ">Our Top Destinations <br>&darr;</button>
+    <button onclick="location.href = '#top_destinations'" class="booknow__btn" style="font-size: 1.3rem; ">Book Now</button>
 </section>
 
-<section class="intro__section">
-    <div class="sub__heading">
-        <h2>Welcome to Travel 24</h2>
-    </div>
+<section class="intro__section" id="intro">
+  <div class="sub__heading m-0 p-0 mt-4" style="width: 100%" >
+             <h2 style="margin: 10px 50px; margin-right: auto">Welcome to Travel 24</h2>
+        </div>
     <div class="intro">
+        
         <div class="intro__text">
+           
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse
             possimus odit voluptates minima deserunt laudantium? Commodi
             voluptatibus perferendis corrupti magni dolore quae est suscipit
@@ -47,7 +49,7 @@
             </a>
             <div class="dist__content">
                 <div class="dist__name">
-                    <a href="destination.html"><strong>{{$dest->title}}</strong></a>
+                    <a href="{{route('view.destination',$dest->slug)}}"><strong>{{$dest->title}}</strong></a>
                 </div>
                 <div class="dist__detail">
                     <p><strong>Duration: </strong> {{$dest->duration}}</p>
@@ -78,7 +80,7 @@
             </a>
             <div class="dist__content">
                 <div class="dist__name">
-                    <a href="destination.html"><strong>{{$dest->title}}</strong></a>
+                    <a href="{{route('view.destination',$dest->slug)}}"><strong>{{$dest->title}}</strong></a>
                 </div>
                 <div class="dist__detail">
                     <p><strong>Duration: </strong> {{$dest->duration}}</p>

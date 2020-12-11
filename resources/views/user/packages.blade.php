@@ -16,7 +16,7 @@
             </a>
             <div class="dist__content">
                 <div class="dist__name">
-                    <a href="destination.html"><strong>{{$dest->title}}</strong></a>
+                    <a href="{{route('view.destination',$dest->slug)}}"><strong>{{$dest->title}}</strong></a>
                 </div>
                 <div class="dist__detail">
                     <p><strong>Duration: </strong> {{$dest->duration}}</p>

@@ -52,16 +52,18 @@ Route::group(['middleware' => 'cachecontrol'], function () {
             Route::get('{id}/addfrontdest', 'DestinationController@addFrontDest')->name('destination.addfront');
             Route::get('{id}/removefrontdest', 'DestinationController@removeFrontDest')->name('destination.removeFront');
 
+            Route::get('/gallery', 'AdminController@gallery')->name('admin.gallery');
+            Route::post('/gallery/upload', 'AdminController@addToGallery')->name('admin.addToGallery');
+
         });
     });
 
 //for users
     Route::get('/', 'ViewController@index')->name('view.index');
+    Route::get('/ourgallery', 'ViewController@gallery')->name('view.gallery');
     Route::get('/contactus', 'ViewController@contactUs')->name('view.contactus');
     Route::get('/packages/{slug}', 'ViewController@package')->name('view.package');
     Route::get('/packages/{slug}/destination', 'ViewController@destination')->name('view.destination');
     Route::post('/package/{id}/booking', 'ViewController@booking')->name('view.booking');
     Route::post('/message', 'ViewController@postMessage')->name('view.postmsg');
 });
-
-?>
