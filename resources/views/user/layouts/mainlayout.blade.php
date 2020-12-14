@@ -69,28 +69,33 @@
                         Activities
 
                         <ul class="dropdown-menu dropdown-menu-right bg-transparent " style="background-color: white !important; color: black !important;">
-                            {{-- @foreach($countries as $country)
+                            @foreach($activities->take(6) as $activity)
                             <li>
-                                <a class="dropdown-item dropdown-toggle" href="{{route('view.package',$country->slug)}}">
-                            {{$country->countryname}}</a>
+                                <a class="dropdown-item" href="{{ route('view.activity', ['slug'=>$activity->slug])}}">
+
+                                    {{$activity->title}}</a>
+                            </li>
+                            @endforeach
+                            @if(count($activities) > 6)
+                            <hr>
+                            <li>
+                                <a href="{{route("view.activities")}}" class="dropdown-item">
+                                    view More Activities
+                                </a>
+                            </li>
+                            @endif
+
+
+                        </ul>
+                    </div>
                 </li>
-                @endforeach --}}
-
-                <li>
-                    <a class="dropdown-item" href="#">
-                        Trekking and Tour
-                    </a>
-                </li>
-            </ul>
-            </div>
-            </li>
 
 
-            <li class="nav__link"><a href="{{route('view.gallery')}}">Gallery</a></li>
+                <li class="nav__link"><a href="{{route('view.gallery')}}">Gallery</a></li>
 
-            <li class="nav__link"><a href="#">Testimonials</a></li>
+                <li class="nav__link"><a href="#">Testimonials</a></li>
 
-            <li class="nav__link"><a href="{{route('view.contactus')}}">Contact us</a> </li>
+                <li class="nav__link"><a href="{{route('view.contactus')}}">Contact us</a> </li>
 
             </ul>
         </nav>
@@ -116,26 +121,59 @@
 
     @yield('content')
 
-    <section class="my-4 py-4">
-        <h3 class="text-center my-4 font-weight-bolder">Our Affilates</h3>
-        <ul class="list-unstyled d-flex justify-content-around">
-            <li class="d-block">Affilates 1</li>
-            <li class="d-block">Affilates 1</li>
-            <li class="d-block">Affilates 1</li>
-            <li class="d-block">Affilates 1</li>
-            <li class="d-block">Affilates 1</li>
-            <li class="d-block">Affilates 1</li>
-        </ul>
-    </section>
-
     <footer class="main__footer">
         <div class="contacts">
-            <h5>Contact Us</h5>
-            <div class="contact__detail">
-                <p>{{$contact->email}}</p>
-                <p>{{$contact->phone}}</p>
-                <p>{{$contact->address}}</p>
+            <div class="sub__heading">
+                <h5>Contact Address</h5>
             </div>
+            <div class="contact__item d-flex justify-content-between align-items-center">
+                <div class="title align-items-center d-flex">
+                    <span class="material-icons">account_circle</span>
+                </div>
+                <div class="content ">
+                    {{$contact->name}}
+                </div>
+            </div>
+            <div class="contact__item d-flex justify-content-between align-items-center">
+                <div class="title align-items-center d-flex">
+                    <span class="material-icons">location_on</span>
+                </div>
+                <div class="content ">
+                    {{$contact->address}}
+                </div>
+            </div>
+
+            <div class="contact__item d-flex justify-content-between align-items-center">
+                <div class="title align-items-center d-flex">
+                    <span class="material-icons">call</span>
+
+                </div>
+                <div class="content ">
+                    {{$contact->phone}}
+                </div>
+            </div>
+            <div class="contact__item d-flex justify-content-between align-items-center">
+                <div class="title align-items-center d-flex">
+                    <span class="material-icons">email</span>
+                </div>
+                <div class="content ">
+                    {{$contact->email}}
+                </div>
+            </div>
+        </div>
+
+        <div class="contacts">
+            <div class="sub__heading">
+                <h5>Quick Links</h5>
+
+            </div>
+
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28262.13079913638!2d85.31053821466584!3d27.693615498500222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18e2c38d87eb%3A0x8646b46ca5ab0660!2sTravel%2024%20Nepal!5e0!3m2!1sen!2snp!4v1598167470319!5m2!1sen!2snp" width="100%" height="100%" frameborder="0" style="border: 0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+
         </div>
 
     </footer>

@@ -44,6 +44,7 @@ class AdminController extends Controller {
 
     public function postContact(Request $request) {
         $contact          = Contact::latest()->first();
+        $contact->name    = $request['name'];
         $contact->email   = $request['email'];
         $contact->phone   = $request['contactnumber'];
         $contact->address = $request['address'];

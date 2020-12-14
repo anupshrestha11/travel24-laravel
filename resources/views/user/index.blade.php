@@ -12,8 +12,8 @@
 </section>
 
 <section class="intro__section" id="intro">
-    <div class="sub__heading m-0 p-0 mt-4" style="width: 100%">
-        <h2 style="margin: 10px 50px; margin-right: auto">Welcome to Travel 24</h2>
+    <div class="sub__heading m-0  mt-4 " style="width: 100%">
+        <h2 style="margin: 10px 30px; margin-right: auto">Welcome to Travel 24</h2>
     </div>
     <div class="intro">
         <div class="intro__text">
@@ -36,26 +36,33 @@
 
 <section class="dist__section">
     <div class="sub__heading">
-        <h3>Destinations</h3>
+        <h3 class="mb-1">Destinations</h3>
     </div>
-    <div class="dist">
-        @foreach ($frontDest as $dest)
+    <style>
+        .dist.tabview {
+            max-width: unset;
+        }
 
-        <div class="dist__card">
-            <a href="{{route('view.destination',$dest->slug)}}"><img src="{{url('/countrydestimage'.'/'.$dest->imagename)}}" alt="" class="dist__img" />
-                <span class="material-icons rating">star star star star star_half</span>
+        @media (max-width:1570px) {
+            .dist.tabview {
+                max-width: 800px;
+            }
+
+
+        }
+
+    </style>
+    <div class="dist tabview" style="justify-content: center;">
+        @foreach ($countries as $country)
+
+        <div class="dist__card" style="min-height: unset; height: 200px; position: relative; border-radius: unset; margin: 20px;">
+            <a href="{{route('view.package',$country->slug)}}" style="height: 100%"><img src="{{url('/countryimage'.'/'.$country->imagename)}}" alt="" class="dist__img" style="height: 100%; min-height: unset; object-fit: cover" />
             </a>
-            <div class="dist__content">
+            <div class="dist__content " style="position: absolute; bottom: 0; left: 0; right:0; background: #00000050;">
                 <div class="dist__name">
-                    <a href="{{route('view.destination',$dest->slug)}}"><strong>{{$dest->title}}</strong></a>
-                </div>
-                <div class="dist__detail">
-                    <p><strong>Duration: </strong> {{$dest->duration}}</p>
-                    <p><strong>Difficulty: </strong> {{$dest->difficulty}}</p>
-                    <p><strong>Price: </strong><span class="price"> {{$dest->price}}</span></p>
+                    <a href="{{route('view.package',$country->slug)}}"><strong class="text-white">{{$country->countryname}}</strong></a>
                 </div>
             </div>
-            <a href="{{route('view.destination',$dest->slug)}}" class="dist__booknow">Book now</a>
         </div>
         @endforeach
 
@@ -65,7 +72,7 @@
 
 <section class="dist__section" id="top_destinations">
     <div class="sub__heading">
-        <h3>Top Destinations</h3>
+        <h3 class="mb-1">Top Destinations</h3>
     </div>
     <div class="dist">
 
@@ -92,6 +99,58 @@
 
     </div>
 </section>
+
+<section class="dist__section">
+    <div class="sub__heading ">
+        <h3 class="mb-1">Our Activities</h3>
+    </div>
+    <div class="dist" style="justify-content: center">
+        @foreach ($activities->take(6) as $activity)
+
+        <div class="dist__card" style="min-height: unset; height: 200px; position: relative; border-radius: unset; margin: 20px;">
+
+            <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}" style="height: 100%"><img src="{{url('/activityimage'.'/'.$activity->image_name)}}" alt="" class="dist__img" style="height: 100%; min-height: unset; object-fit: cover" />
+            </a>
+            <div class="dist__content " style="position: absolute; bottom: 0; left: 0; right:0; background: #00000050;">
+                <div class="dist__name">
+                    <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}"><strong class="text-white">{{$activity->title}}</strong></a>
+
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @if(count($activities) > 6)
+
+        <a class="btn btn-secondary" style=" padding: 10px;" href="{{route('view.activities')}}"> View More Activites</a>
+
+        @endif
+    </div>
+</section>
+
+
+<section class="dist__sections">
+    <div class="sub__heading ">
+        <h3 class="mb-1">Recommended By</h3>
+    </div>
+
+    <ul class="list-unstyled d-flex justify-content-around">
+        <li class="d-block">
+            <img src="{{ url('recommend/nepal_goverment.png') }}" alt="" width="100px" height="100px" class="image-fluid" style="object-fit: cover">
+        </li>
+        <li class="d-block">
+            <img src="{{ url('recommend/visitnepal.jpg') }}" alt="" width="100px" height="100px" class="image-fluid" style="object-fit: cover">
+        </li>
+        <li class="d-block">
+            <img src="{{ url('recommend/ntb.png') }}" alt="" width="100px" height="100px" class="image-fluid" style="object-fit: cover">
+        </li>
+        <li class="d-block">
+            <img src="{{ url('recommend/taan.png') }}" alt="" width="100px" height="100px" class="image-fluid" style="object-fit: cover">
+        </li>
+
+    </ul>
+</section>
+
+
 
 {{-- <section class="testimomial__section">
       <div class="sub__heading">

@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
-{
+class Contact extends Model {
 
- protected   $fillable=['email','phone','address'];
+    protected $fillable = ['email', 'phone', 'address', 'contact'];
     //
 }

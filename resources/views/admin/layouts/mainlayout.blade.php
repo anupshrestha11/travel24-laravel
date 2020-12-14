@@ -68,6 +68,13 @@
                     </div>
                 </div>
             </li>
+            <li class="nav-item @if(Request::is('admin/*activity*')) active @endif)">
+                <a class="nav-link" href="{{route('admin.activities')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Activities</span></a>
+
+            </li>
+
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item @if(Request::is('admin/*booking*')) active @endif">
@@ -420,6 +427,9 @@
             tinymce.init({
                 selector: '#introduction'
             });
+            tinymce.init({
+                selector: '#acticitycontent'
+            })
 
         </script>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Activity;
 use App\Booking;
 use App\Country;
 use App\CountryDestination;
@@ -67,6 +68,18 @@ class ViewController extends Controller {
         $images = array_diff(scandir($gallerydir), array('.', '..'));
 
         return view('user.gallery')->with("images", $images);
+    }
+
+    public function activities(Request $request) {
+
+        return view('user.activities');
+    }
+
+    public function viewActivity(Request $request) {
+
+        $activity = Activity::where('slug', $request['slug'])->get()[0];
+
+        return view('user.activity', compact('activity'));
     }
 
 }

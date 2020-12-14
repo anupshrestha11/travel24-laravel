@@ -1,23 +1,17 @@
 .main__footer {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 30px;
-  background-color: #dae0e2;
-  h5 {
-    font-size: larger;
-    margin: 0;
-  }
-  .contacts,
-  .affilates {
-    width: 300px;
-    text-align: center;
-  }
-  .contact__detail,
-  .affilates__detail {
+    margin-top: auto;
     display: flex;
-    justify-content: center;
-    flex-flow: column;
-  }
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: #dae0e2;
+    h5 {
+        font-size: larger;
+        margin: 0;
+        text-align: center0;
+        margin: 5px 0;
+    }
+    .contacts {
+        min-width: 300px;
+    }
 }

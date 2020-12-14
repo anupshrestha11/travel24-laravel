@@ -737,7 +737,7 @@ body {
   margin-top: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 30px;
   background-color: #dae0e2;
 }
@@ -745,19 +745,12 @@ body {
 .main__footer h5 {
   font-size: larger;
   margin: 0;
+  text-align: center0;
+  margin: 5px 0;
 }
 
-.main__footer .contacts,
-.main__footer .affilates {
-  width: 300px;
-  text-align: center;
-}
-
-.main__footer .contact__detail,
-.main__footer .affilates__detail {
-  display: flex;
-  justify-content: center;
-  flex-flow: column;
+.main__footer .contacts {
+  min-width: 300px;
 }
 
 .destination__wrapper {

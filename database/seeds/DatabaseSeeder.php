@@ -1,31 +1,31 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use App\User;
-use Illuminate\Support\Facades\Hash;
 use App\Contact;
-class DatabaseSeeder extends Seeder
-{
+use App\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+class DatabaseSeeder extends Seeder {
     /**
      * Seed the application's database.
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
         User::create(
-            [       
-                'username'=>'traveladmin',
-                'password'=>Hash::make('travel123'),
+            [
+                'username' => 'traveladmin',
+                'password' => Hash::make('travel123'),
             ]);
 
-            Contact::create(
+        Contact::create(
 
-[
-    'email'=>'youremail@email.com',
-    'phone'=>'9811111111,980111111',
-    'address'=>'myaddress,city,whatever',
-]
-            );
+            [
+                'name'    => 'Your name',
+                'email'   => 'youremail@email.com',
+                'phone'   => '9811111111,980111111',
+                'address' => 'myaddress,city,whatever',
+            ]
+        );
     }
 }

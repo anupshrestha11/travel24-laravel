@@ -56,6 +56,11 @@ Route::group(['middleware' => 'cachecontrol'], function () {
             Route::post('/gallery/upload', 'AdminController@addToGallery')->name('admin.addToGallery');
             Route::get('/gallery/delete', 'AdminController@removeFromGallery')->name('admin.removeFromGallery');
 
+            // Activities
+            Route::get('/activities', 'ActivityController@index')->name('admin.activities');
+            Route::get('/activities/add', 'ActivityController@create')->name('admin.activities.create');
+            Route::post('/activities/add', 'ActivityController@store')->name('admin.activities.store');
+
         });
     });
 
@@ -67,4 +72,6 @@ Route::group(['middleware' => 'cachecontrol'], function () {
     Route::get('/packages/{slug}/destination', 'ViewController@destination')->name('view.destination');
     Route::post('/package/{id}/booking', 'ViewController@booking')->name('view.booking');
     Route::post('/message', 'ViewController@postMessage')->name('view.postmsg');
+    Route::get('/activities', 'ViewController@activities')->name('view.activities');
+    Route::get('/activity/{slug}', 'ViewController@viewActivity')->name('view.activity');
 });

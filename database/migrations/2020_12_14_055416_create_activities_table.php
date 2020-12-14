@@ -4,19 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactsTable extends Migration {
+class CreateActivitiesTable extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        Schema::create('contacts', function (Blueprint $table) {
+        Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->required();
-            $table->string('email')->required();
-            $table->string('phone')->required();
-            $table->string('address')->required();
+            $table->string('title');
+            $table->string('slug');
+            $table->Text('content');
+            $table->string('image_name');
+            $table->string('price');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateContactsTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::dropIfExists('contacts');
+        Schema::dropIfExists('activities');
     }
 }
