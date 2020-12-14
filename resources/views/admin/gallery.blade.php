@@ -36,9 +36,26 @@
 
         <h3 class="mt-2">Images</h3>
         <div class="row">
+
+            <style>
+                a.btn.btn-danger {
+                    display: none;
+
+                }
+
+                .image:hover a.btn.btn-danger {
+                    display: block;
+                }
+
+            </style>
+
             @foreach($images as $image)
-            <div class="col-lg-3 col-md-4 col-sm-1 ">
-                <img src="{{ asset('gallery/'.$image) }}" alt="" class="w-100 p-2">
+            <div class="col-lg-3 col-md-4 col-sm-1 relative image">
+                <img src="{{ asset('gallery/'.$image) }}" alt="" class="w-100 p-2 " style="height: 200px; object-fit:cover">
+                <a href="{{ route('admin.removeFromGallery', ['image'=>$image]) }}" class="btn btn-danger" style="position: absolute; top: 10%; right: 10%; cursor:pointer;">
+
+                    <i class="fas fa-trash-alt"></i>
+                </a>
             </div>
             @endforeach
 

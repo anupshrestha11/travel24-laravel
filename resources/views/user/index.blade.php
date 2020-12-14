@@ -12,13 +12,11 @@
 </section>
 
 <section class="intro__section" id="intro">
-  <div class="sub__heading m-0 p-0 mt-4" style="width: 100%" >
-             <h2 style="margin: 10px 50px; margin-right: auto">Welcome to Travel 24</h2>
-        </div>
+    <div class="sub__heading m-0 p-0 mt-4" style="width: 100%">
+        <h2 style="margin: 10px 50px; margin-right: auto">Welcome to Travel 24</h2>
+    </div>
     <div class="intro">
-        
         <div class="intro__text">
-           
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse
             possimus odit voluptates minima deserunt laudantium? Commodi
             voluptatibus perferendis corrupti magni dolore quae est suscipit

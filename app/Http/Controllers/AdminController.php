@@ -87,4 +87,11 @@ class AdminController extends Controller {
         return redirect(route('admin.gallery'));
     }
 
+    public function removeFromGallery(Request $request) {
+        $imagepath = public_path('gallery') . "/" . $request['image'];
+        unlink($imagepath);
+        return redirect(route('admin.gallery'));
+
+    }
+
 }

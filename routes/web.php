@@ -54,6 +54,7 @@ Route::group(['middleware' => 'cachecontrol'], function () {
 
             Route::get('/gallery', 'AdminController@gallery')->name('admin.gallery');
             Route::post('/gallery/upload', 'AdminController@addToGallery')->name('admin.addToGallery');
+            Route::get('/gallery/delete', 'AdminController@removeFromGallery')->name('admin.removeFromGallery');
 
         });
     });

@@ -41,7 +41,7 @@
                 <li class="nav__link"><a href="/#intro">About us</a></li>
                 <li class="nav__link dropdown">
                     <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Destination
+                        Destinations
 
                         <ul class="dropdown-menu dropdown-menu-right bg-transparent " style="background-color: white !important; color: black !important;">
                             @foreach($countries as $country)
@@ -64,8 +64,33 @@
 
 
                 </li>
-                <li class="nav__link"><a href="{{route('view.gallery')}}">Our Gallery</a></li>
-                <li class="nav__link"><a href="{{route('view.contactus')}}">Contact us</a> </li>
+                <li class="nav__link">
+                    <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Activities
+
+                        <ul class="dropdown-menu dropdown-menu-right bg-transparent " style="background-color: white !important; color: black !important;">
+                            {{-- @foreach($countries as $country)
+                            <li>
+                                <a class="dropdown-item dropdown-toggle" href="{{route('view.package',$country->slug)}}">
+                            {{$country->countryname}}</a>
+                </li>
+                @endforeach --}}
+
+                <li>
+                    <a class="dropdown-item" href="#">
+                        Trekking and Tour
+                    </a>
+                </li>
+            </ul>
+            </div>
+            </li>
+
+
+            <li class="nav__link"><a href="{{route('view.gallery')}}">Gallery</a></li>
+
+            <li class="nav__link"><a href="#">Testimonials</a></li>
+
+            <li class="nav__link"><a href="{{route('view.contactus')}}">Contact us</a> </li>
 
             </ul>
         </nav>
