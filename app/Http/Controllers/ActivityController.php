@@ -97,7 +97,11 @@ class ActivityController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request) {
-        Activity::findOrFail($request['id'])->delete();
+        $activity  = Activity::findOrFail($request['id']);
+        $imagepath = public_path('activityimage') . "/" . $activity->image_name;
+        unlink($imagepath);
+        $activity->delete();
+
         return redirect()->back();
     }
 
