@@ -60,3 +60,27 @@ const scrollNav = () => {
 
     landingViewObserver.observe(landingView);
 };
+
+var slider = tns({
+    container: "#testimonials",
+    speed: 100,
+    items: 1,
+    autoplay: true,
+    nav: false,
+    autoplayButton: false,
+    autoplayHoverPause: true,
+    controlsContainer: "#customize-controls",
+    responsive: {
+        640: {
+            edgePadding: 20,
+            gutter: 20,
+            items: 1
+        },
+        700: {
+            gutter: 30
+        },
+        900: {
+            items: 2
+        }
+    }
+});

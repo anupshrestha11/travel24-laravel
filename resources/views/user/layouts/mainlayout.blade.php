@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet" />
     <!-- ! material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+
+
 
     <link rel="stylesheet" href="{{asset('/css/user/main.css')}}" />
 
@@ -37,12 +40,15 @@
             <div></div>
         </div>
         <nav>
+
+
+
+
             <ul class="nav__items">
                 <li class="nav__link"><a href="/#intro">About us</a></li>
                 <li class="nav__link dropdown">
                     <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Destinations
-
                         <ul class="dropdown-menu dropdown-menu-right bg-transparent " style="background-color: white !important; color: black !important;">
                             @foreach($countries as $country)
                             <li>
@@ -178,12 +184,6 @@
 
     </footer>
 
-    <script src="{{asset('/js/user/script.js')}}"></script>
-    <script>
-        responsiveNav();
-        scrollNav();
-
-    </script>
     <!-- ! Bootstrap js  -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -191,6 +191,18 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+
+    <script src="{{asset('/js/user/script.js')}}"></script>
+    <script>
+        responsiveNav();
+        scrollNav();
+
+    </script>
+
+
 </body>
 
 </html>

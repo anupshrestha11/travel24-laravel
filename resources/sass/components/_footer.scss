@@ -1,7 +1,6 @@
 .main__footer {
     margin-top: auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     padding: 30px;
     background-color: #dae0e2;
@@ -13,5 +12,11 @@
     }
     .contacts {
         min-width: 300px;
+    }
+
+    @media (max-width: 899px) {
+        display: grid;
+        place-content: center;
+        gap: 30px;
     }
 }

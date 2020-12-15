@@ -68,12 +68,18 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item @if(Request::is('admin/*activity*')) active @endif)">
+            <li class="nav-item @if(Request::is('admin/*activities*')) active @endif)">
                 <a class="nav-link" href="{{route('admin.activities')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Activities</span></a>
-
             </li>
+
+            <li class="nav-item @if(Request::is('admin/*testimonial*')) active @endif)">
+                <a class="nav-link" href="{{route('admin.testimonials')}}">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Testimonial</span></a>
+            </li>
+
 
 
             <!-- Nav Item - Utilities Collapse Menu -->
@@ -404,10 +410,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
 
         <!-- Bootstrap core JavaScript-->
         <script src="{{asset('js/admin/vendor/jquery/jquery.min.js')}}"></script>

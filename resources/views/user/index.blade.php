@@ -127,24 +127,78 @@
     </div>
 </section>
 
+<section class="testimomial__section">
+    <div class="sub__heading">
+        <h3>What Our Client Say</h3>
+    </div>
+    <div class="testimonial__wrapper" id="testimonials">
+        @foreach ($testimonials as $testiment)
+
+        <div class="testimonial__card">
+            <div class="testiment__content">
+                <div class="testiment__name">
+                    <strong>{{$testiment->name}}</strong>
+                </div>
+
+                <div class="d-flex justify-content-between mr-1">
+                    <span class="material-icons rating" style="color: #F3B431">
+                        @for ($i = 0; $i < $testiment->rating; $i++)
+                            star
+                            @endfor
+                    </span>
+                    <div>
+                        <p class="p-0 m-0">{{$testiment->created_at->diffForHumans()}}</p>
+                    </div>
+
+                </div>
+
+
+                <div class="testiment__text">
+                    <p>
+                        {!!$testiment->testiment!!}
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+    <ul class="controls" id="customize-controls">
+        <li class="prev">
+            <span class="material-icons">
+                arrow_back_ios
+            </span>
+
+        </li>
+        <li class="next">
+            <span class="material-icons">
+                arrow_forward_ios
+            </span>
+
+        </li>
+    </ul>
+
+</section>
+
+
 
 <section class="dist__sections">
     <div class="sub__heading ">
         <h3 class="mb-1">Recommended By</h3>
     </div>
 
-    <ul class="list-unstyled d-flex justify-content-around">
+    <ul class="list-unstyled d-flex justify-content-around recommend">
         <li class="d-block">
-            <img src="{{ url('recommend/nepal_goverment.png') }}" alt="" width="100px" height="100px" class="image-fluid" style="object-fit: cover">
+            <img src="{{ url('recommend/nepal_goverment.png') }}" alt="" class="image-fluid" />
         </li>
         <li class="d-block">
-            <img src="{{ url('recommend/visitnepal.jpg') }}" alt="" width="100px" height="100px" class="image-fluid" style="object-fit: cover">
+            <img src="{{ url('recommend/visitnepal.jpg') }}" alt="" class="image-fluid" />
         </li>
         <li class="d-block">
-            <img src="{{ url('recommend/ntb.png') }}" alt="" width="100px" height="100px" class="image-fluid" style="object-fit: cover">
+            <img src="{{ url('recommend/ntb.png') }}" alt="" class="image-fluid" />
         </li>
         <li class="d-block">
-            <img src="{{ url('recommend/taan.png') }}" alt="" width="100px" height="100px" class="image-fluid" style="object-fit: cover">
+            <img src="{{ url('recommend/taan.png') }}" alt="" class="image-fluid" />
         </li>
 
     </ul>
@@ -152,51 +206,5 @@
 
 
 
-{{-- <section class="testimomial__section">
-      <div class="sub__heading">
-        <h3>What Our Client Say</h3>
-      </div>
-      <div class="testimonial__wrapper">
-        <div class="testimonial__card">
-          <img src="./static/images/person.jpg" alt="" />
-          <div class="testiment__content">
-            <div class="testiment__name">
-              <strong>John Doe</strong>
-            </div>
-            <div class="testiment__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              pariatur illum quod consequatur dolores dicta totam obcaecati,
-              expedita velit explicabo.
-            </div>
-          </div>
-        </div>
-        <div class="testimonial__card">
-          <img src="./static/images/person.jpg" alt="" />
-          <div class="testiment__content">
-            <div class="testiment__name">
-              <strong>John Doe</strong>
-            </div>
-            <div class="testiment__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              pariatur illum quod consequatur dolores dicta totam obcaecati,
-              lorem100
-            </div>
-          </div>
-        </div>
-        <div class="testimonial__card">
-          <img src="./static/images/person.jpg" alt="" />
-          <div class="testiment__content">
-            <div class="testiment__name">
-              <strong>John Doe</strong>
-            </div>
-            <div class="testiment__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-              pariatur illum quod consequatur dolores dicta totam obcaecati,
-              expedita velit explicabo.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> --}}
 
 @endsection

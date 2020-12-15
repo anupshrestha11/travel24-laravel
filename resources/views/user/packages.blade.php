@@ -18,10 +18,10 @@
                 <div class="dist__name">
                     <a href="{{route('view.destination',$dest->slug)}}"><strong>{{$dest->title}}</strong></a>
                 </div>
-                <div class="dist__detail">
+                <div class="dist__detail ">
                     <p><strong>Duration: </strong> {{$dest->duration}}</p>
                     <p><strong>Difficulty: </strong> {{$dest->difficulty}}</p>
-                    <p><strong>Price: </strong><span class="price"> {{$dest->price}}</span></p>
+                    <p><strong>Price: </strong><span class="price">US${{$dest->price}}</span></p>
                 </div>
             </div>
             <a href="{{route('view.destination',$dest->slug)}}" class="dist__booknow">Book now</a>
