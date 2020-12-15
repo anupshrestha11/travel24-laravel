@@ -39,9 +39,7 @@
                     <h4>Trip Highlights</h4>
 
                     <ul>
-                        <?php $highlightArray=explode(':?:',trim($destination->highlights,':?:'))
-                    
-                ?>
+                        <?php $highlightArray=explode(':?:',trim($destination->highlights,':?:'))?>
                         @for($i=0;$i<sizeOf($highlightArray);$i++) <li>{{$highlightArray[$i]}}</li>
                             @endfor
                     </ul>

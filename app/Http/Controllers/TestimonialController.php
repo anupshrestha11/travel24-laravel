@@ -64,8 +64,8 @@ class TestimonialController extends Controller {
      * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testimonial $testimonial) {
-        //
+    public function edit(Testimonial $testiment) {
+        return view('admin.edittestiment')->with('testiment', $testiment);
     }
 
     /**
@@ -75,8 +75,16 @@ class TestimonialController extends Controller {
      * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial $testimonial) {
-        //
+    public function update(Request $request, Testimonial $testiment) {
+
+        $testiment->name      = $request->name;
+        $testiment->country   = $request->country;
+        $testiment->rating    = $request->rating;
+        $testiment->testiment = $testiment->testiment;
+
+        $testiment->save();
+
+        return redirect(route("admin.testimonials"));
     }
 
     /**

@@ -59,7 +59,7 @@
 
 
                             <td class="text-center">
-                                <a href="" class="btn btn-warning btn-edit m-1">
+                                <a href="{{ route('admin.testimonials.edit', $testiment->id) }}" class="btn btn-warning  m-1">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form style="display:inline" method="POST" action="{{ route('admin.testimonials.delete', ['id'=>$testiment->id]) }}">

@@ -44,7 +44,7 @@
                             <td>{{$activity->title}}</td>
                             <td>{{$activity->price}}</td>
                             <td class="text-center">
-                                <a href="" class="btn btn-warning btn-edit m-1">
+                                <a href="{{ route('admin.activities.edit', $activity->id) }}" class="btn btn-warning  m-1">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form style="display:inline" method="POST" action="{{ route('admin.activities.delete', ['id'=>$activity->id]) }}">

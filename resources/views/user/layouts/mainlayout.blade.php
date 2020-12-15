@@ -45,7 +45,7 @@
 
 
             <ul class="nav__items">
-                <li class="nav__link"><a href="/#intro">About us</a></li>
+                <li class="nav__link"><a href="/#intro">About</a></li>
                 <li class="nav__link dropdown">
                     <div class="dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Destinations
@@ -101,7 +101,7 @@
 
                 <li class="nav__link"><a href="#">Testimonials</a></li>
 
-                <li class="nav__link"><a href="{{route('view.contactus')}}">Contact us</a> </li>
+                <li class="nav__link"><a href="{{route('view.contactus')}}">Contact</a> </li>
 
             </ul>
         </nav>

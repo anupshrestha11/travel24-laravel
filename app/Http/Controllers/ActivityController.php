@@ -72,11 +72,11 @@ class ActivityController extends Controller {
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Activity $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
-        //
+    public function edit(Activity $activity) {
+        return view('admin.editactivity')->with('activity', $activity);
     }
 
     /**
@@ -86,8 +86,24 @@ class ActivityController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
-        //
+    public function update(Request $request, Activity $activity) {
+
+        $request['slug'] = $this->slugify($request['title']);
+
+        $activity->title   = $request->title;
+        $activity->slug    = $request->slug;
+        $activity->content = $request->content;
+        $activity->price   = $request->price;
+
+        if ($request->has('image')) {
+            $image_name = time() . $request->image->getClientOriginalName();
+            request()->image->move(public_path("activityimage"), $image_name);
+            unlink(public_path() . '/' . 'activityimage/' . $activity->imagename);
+            $activity->imagename = $image_name;
+        }
+
+        $activity->save();
+        return redirect(route('admin.activities'));
     }
 
     /**
@@ -101,7 +117,6 @@ class ActivityController extends Controller {
         $imagepath = public_path('activityimage') . "/" . $activity->image_name;
         unlink($imagepath);
         $activity->delete();
-
         return redirect()->back();
     }
 

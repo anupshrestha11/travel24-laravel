@@ -137,7 +137,7 @@
         <div class="testimonial__card">
             <div class="testiment__content">
                 <div class="testiment__name">
-                    <strong>{{$testiment->name}}</strong>
+                    <strong>{{$testiment->name}}</strong> <small>{{$testiment->country}}</small>
                 </div>
 
                 <div class="d-flex justify-content-between mr-1">
@@ -163,6 +163,7 @@
         </div>
         @endforeach
     </div>
+    @if(count($testimonials) > 0)
     <ul class="controls" id="customize-controls">
         <li class="prev">
             <span class="material-icons">
@@ -177,6 +178,9 @@
 
         </li>
     </ul>
+
+
+    @endif
 
 </section>
 

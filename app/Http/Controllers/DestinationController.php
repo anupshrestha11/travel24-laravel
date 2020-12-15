@@ -174,4 +174,38 @@ class DestinationController extends Controller {
 
         return $text;
     }
+
+    public function edit($id, $destid) {
+        $country = Country::findOrFail($id);
+        $dest    = CountryDestination::findOrFail($destid);
+        return view('admin.editdestination', compact('dest', 'country'));
+    }
+
+    public function update(Request $request, $destid, $cid) {
+
+        $dest = CountryDestination::findOrFail($destid);
+
+        $dest->title            = $request['title'];
+        $dest->duration         = $request['duration'];
+        $dest->difficulty       = $request['gridRadios'];
+        $dest->price            = $request['price'];
+        $dest->tripintroduction = $request['introduction'];
+        $dest->slug             = $this->slugify($request['title']);
+        $allHighlight           = "";
+        foreach ($request['highlight'] as $highlight) {
+            $allHighlight = $highlight . ':?:' . $allHighlight;
+        }
+        $dest->highlights = $allHighlight;
+
+        if ($request->has('image')) {
+            $image_name = time() . $request->image->getClientOriginalName();
+            request()->image->move(public_path("countrydestimage"), $image_name);
+            unlink(public_path() . '/' . 'countrydestimage/' . $dest->imagename);
+            $dest->imagename = $image_name;
+        }
+        $dest->save();
+
+        return redirect(route('destination.getcountries', $cid));
+    }
+
 }
