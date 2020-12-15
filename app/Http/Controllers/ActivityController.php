@@ -96,8 +96,9 @@ class ActivityController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
-        //
+    public function destroy(Request $request) {
+        Activity::findOrFail($request['id'])->delete();
+        return redirect()->back();
     }
 
     public function slugify($text) {

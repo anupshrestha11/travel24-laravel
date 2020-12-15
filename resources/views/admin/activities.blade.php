@@ -47,7 +47,7 @@
                                 <a href="" class="btn btn-warning btn-edit m-1">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form style="display:inline" method="POST" action="">
+                                <form style="display:inline" method="POST" action="{{ route('admin.activities.delete', ['id'=>$activity->id]) }}">
                                     @csrf
                                     <button type="submit" class="btn btn-danger m-1 btn-delete">
                                         <i class="fas fa-trash"></i>

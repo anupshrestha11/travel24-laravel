@@ -60,10 +60,13 @@ Route::group(['middleware' => 'cachecontrol'], function () {
             Route::get('/activities', 'ActivityController@index')->name('admin.activities');
             Route::get('/activities/add', 'ActivityController@create')->name('admin.activities.create');
             Route::post('/activities/add', 'ActivityController@store')->name('admin.activities.store');
+            Route::post('/activities/delete', 'ActivityController@destroy')->name('admin.activities.delete');
 
             Route::get('/testimonials', 'TestimonialController@index')->name('admin.testimonials');
             Route::get('/testimonials/add', 'TestimonialController@create')->name('admin.testimonials.create');
-            Route::post('/testimonials/add', 'TestimonialController@store')->name('admin.testimonials.store');
+            Route::post('/testimonials/add/{id}', 'TestimonialController@store')->name('admin.testimonials.store');
+            Route::post('/testimonials/delete', 'TestimonialController@destroy')->name('admin.testimonials.delete');
+
         });
     });
 

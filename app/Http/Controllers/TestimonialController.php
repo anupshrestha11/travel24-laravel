@@ -85,7 +85,8 @@ class TestimonialController extends Controller {
      * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Testimonial $testimonial) {
-        //
+    public function destroy(Request $request) {
+        Testimonial::findOrFail($request['id'])->delete();
+        return redirect()->back();
     }
 }
