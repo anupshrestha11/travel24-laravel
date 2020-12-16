@@ -51,7 +51,7 @@ Route::group(['middleware' => 'cachecontrol'], function () {
             Route::get('{id}/removetopdest', 'DestinationController@removeTopDest')->name('destination.removetop');
             Route::get('{id}/addfrontdest', 'DestinationController@addFrontDest')->name('destination.addfront');
             Route::get('{id}/removefrontdest', 'DestinationController@removeFrontDest')->name('destination.removeFront');
-            Route::get('{id}/destination/edit/{destid}', 'DestinationController@edit')->name('destination.edit');
+            Route::get('{id}/destination/edit/{destid}', 'DestinationController@edit')->name('countrydestination.edit');
             Route::put('{cid}/destination/update/{destid}', 'DestinationController@update')->name('destination.update');
 
             Route::get('/gallery', 'AdminController@gallery')->name('admin.gallery');

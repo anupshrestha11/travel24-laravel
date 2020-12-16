@@ -57,7 +57,8 @@
                             <td class="text-center">
                                 <a href="{{route('destination.infoDestination',$countryDest->id)}}" class="btn btn-info m-1"><i class="fas fa-info-circle"></i>
                                 </a>
-                                <a href="{{ route('destination.edit', ['id'=>$country->id, 'destid'=>$countryDest->id]) }}" class="btn btn-warning m-1">
+                                <a href="{{ route('countrydestination.edit', ['id'=>$country->id, 'destid'=>$countryDest->id]) }}" class="btn btn-warning m-1">
+
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <form style="display: inline" method="post" action="{{route('destination.deleteDestination',$countryDest->id)}}">
