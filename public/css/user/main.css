@@ -432,7 +432,7 @@ body {
 @media screen and (min-width: 1000px) {
   .landing__view .heading {
     font-size: 4rem;
-    margin: 30px auto;
+    margin: 250px auto 10px;
   }
 
   .landing__view .tagline {
@@ -555,7 +555,6 @@ body {
 
 .dist__card {
   width: 350px;
-  border-radius: 15px 15px 0 0;
   overflow: hidden;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
   margin: 20px auto;
@@ -770,7 +769,7 @@ body {
 }
 
 .main__footer .social ul {
-  max-width: 500px;
+  max-width: 300px;
   width: 100%;
   margin: 0 auto;
   list-style: none;

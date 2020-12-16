@@ -6,16 +6,16 @@
 <section class="landing__view" id="landing__view">
     <h1 class="heading">Travel 24</h1>
     <p class="tagline">
-        Travel 24 Line Here
+        Dream to Destination
     </p>
-    <button onclick="location.href'#top_destinations'" class="booknow__btn" style="font-size: 1.3rem; ">Book Now</button>
+    <button onclick="location.href = '#destination'" class="booknow__btn py-2 px-4" style="font-size: 1.2rem; ">Book Now</button>
 </section>
 
-<section class="intro__section" id="intro">
+<section class="intro__section mb-4 mt-0" id="intro">
 
     <div class="intro">
         <div class="intro__text">
-            <div class="sub__heading m-0  mt-4 mb-auto " style="width: 100%">
+            <div class="sub__heading m-0  mb-auto " style="width: 100%">
                 <h2 style="margin: 10px 0; margin-right: auto">Welcome to Travel 24</h2>
             </div>
 
@@ -36,10 +36,12 @@
     </div>
 </section>
 
-<section class="dist__section" style="background: #dae0e2">
+<section class="dist__section p-4 m-0" style="background: #dae0e2" id="destination">
 
-    <div class="sub__heading">
-        <h3 class="mb-1">Destinations</h3>
+
+
+    <div class="sub__heading p-0">
+        <h3 class="mb-1 mt-2">Destinations</h3>
     </div>
     <style>
         .dist.tabview {
@@ -73,9 +75,42 @@
     </div>
 </section>
 
-<section class="dist__section" id="top_destinations">
+
+
+<section class="dist__section mb-4  ">
+
+
+    <div class="sub__heading ">
+        <h3 class="mb-1 mt-2">Our Activities</h3>
+    </div>
+    <div class="dist tabview" style="justify-content: center">
+
+        @foreach ($activities->take(4) as $activity)
+
+        <div class="dist__card" style="min-height: unset; height: 200px; position: relative; border-radius: unset; margin: 20px;">
+
+            <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}" style="height: 100%"><img src="{{url('/activityimage'.'/'.$activity->image_name)}}" alt="" class="dist__img" style="height: 100%; min-height: unset; object-fit: cover" />
+            </a>
+            <div class="dist__content " style="position: absolute; bottom: 0; left: 0; right:0; background: #00000050;">
+                <div class="dist__name">
+                    <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}"><strong class="text-white">{{$activity->title}}</strong></a>
+
+                </div>
+            </div>
+        </div>
+        @endforeach
+        @if(count($activities) > 6)
+
+        <a class="btn btn-secondary" style=" padding: 10px;" href="{{route('view.activities')}}"> View More Activites</a>
+
+        @endif
+    </div>
+</section>
+
+<section class="dist__section pt-2 pb-4 m-0" id="top_destinations" style="background: #dae0e2">
+
     <div class="sub__heading">
-        <h3 class="mb-1">Top Destinations</h3>
+        <h3 class="mb-1">Best Selling Trips</h3>
     </div>
     <div class="dist">
 
@@ -103,34 +138,6 @@
     </div>
 </section>
 
-<section class="dist__section" style="background: #dae0e2">
-
-
-    <div class="sub__heading ">
-        <h3 class="mb-1">Our Activities</h3>
-    </div>
-    <div class="dist" style="justify-content: center">
-        @foreach ($activities->take(6) as $activity)
-
-        <div class="dist__card" style="min-height: unset; height: 200px; position: relative; border-radius: unset; margin: 20px;">
-
-            <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}" style="height: 100%"><img src="{{url('/activityimage'.'/'.$activity->image_name)}}" alt="" class="dist__img" style="height: 100%; min-height: unset; object-fit: cover" />
-            </a>
-            <div class="dist__content " style="position: absolute; bottom: 0; left: 0; right:0; background: #00000050;">
-                <div class="dist__name">
-                    <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}"><strong class="text-white">{{$activity->title}}</strong></a>
-
-                </div>
-            </div>
-        </div>
-        @endforeach
-        @if(count($activities) > 6)
-
-        <a class="btn btn-secondary" style=" padding: 10px;" href="{{route('view.activities')}}"> View More Activites</a>
-
-        @endif
-    </div>
-</section>
 
 <section class="testimomial__section">
     <div class="sub__heading">
@@ -191,9 +198,9 @@
 
 
 
-<section class="dist__sections">
+<section class="dist__sections ">
     <div class="sub__heading ">
-        <h3 class="mb-3">Recommended By</h3>
+        <h3 class="mb-3 mt-0">Recommended By</h3>
     </div>
 
     <ul class="list-unstyled d-flex justify-content-around recommend">
