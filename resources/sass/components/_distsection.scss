@@ -26,6 +26,11 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+            overflow: hidden;
+            &:hover {
+                transform: scale(1.2);
+            }
         }
         span.rating {
             position: absolute;
@@ -35,6 +40,7 @@
             font-size: 1.3rem;
         }
         .dist__content {
+            background: #fff;
             padding: 10px;
             display: flex;
             justify-content: center;

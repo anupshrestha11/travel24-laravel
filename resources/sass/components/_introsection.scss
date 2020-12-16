@@ -29,7 +29,7 @@
     padding: 10px;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 899px) {
     .intro__section .sub__heading {
         h2 {
             font-size: 1.6rem;
@@ -51,7 +51,7 @@
         height: 300px;
     }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 899px) {
     .intro__section .sub__heading {
         h2 {
             font-size: 2rem;
@@ -60,18 +60,20 @@
     }
     .intro {
         flex-flow: row;
+        align-items: center;
     }
     .intro__text {
         padding: 0 30px;
         padding-right: 20px;
         width: 50%;
         margin: 10px auto;
-        letter-spacing: 0.05rem;
+        // letter-spacing: 0.05rem;
         line-height: 1.3rem;
     }
     .intro__video {
         width: 50%;
         height: 300px;
+        padding-top: 50px;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -81,7 +83,7 @@
         }
     }
     .intro__text {
-        letter-spacing: 0.1rem;
+        // letter-spacing: 0.1rem;
         line-height: 1.5rem;
     }
     .intro__video {

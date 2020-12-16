@@ -8,15 +8,17 @@
     <p class="tagline">
         Travel 24 Line Here
     </p>
-    <button onclick="location.href = '#top_destinations'" class="booknow__btn" style="font-size: 1.3rem; ">Book Now</button>
+    <button onclick="location.href'#top_destinations'" class="booknow__btn" style="font-size: 1.3rem; ">Book Now</button>
 </section>
 
 <section class="intro__section" id="intro">
-    <div class="sub__heading m-0  mt-4 " style="width: 100%">
-        <h2 style="margin: 10px 30px; margin-right: auto">Welcome to Travel 24</h2>
-    </div>
+
     <div class="intro">
         <div class="intro__text">
+            <div class="sub__heading m-0  mt-4 mb-auto " style="width: 100%">
+                <h2 style="margin: 10px 0; margin-right: auto">Welcome to Travel 24</h2>
+            </div>
+
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse
             possimus odit voluptates minima deserunt laudantium? Commodi
             voluptatibus perferendis corrupti magni dolore quae est suscipit
@@ -34,7 +36,8 @@
     </div>
 </section>
 
-<section class="dist__section">
+<section class="dist__section" style="background: #dae0e2">
+
     <div class="sub__heading">
         <h3 class="mb-1">Destinations</h3>
     </div>
@@ -52,7 +55,7 @@
         }
 
     </style>
-    <div class="dist tabview" style="justify-content: center;">
+    <div class="dist tabview" style="justify-content: center; ;">
         @foreach ($countries as $country)
 
         <div class="dist__card" style="min-height: unset; height: 200px; position: relative; border-radius: unset; margin: 20px;">
@@ -100,7 +103,9 @@
     </div>
 </section>
 
-<section class="dist__section">
+<section class="dist__section" style="background: #dae0e2">
+
+
     <div class="sub__heading ">
         <h3 class="mb-1">Our Activities</h3>
     </div>
@@ -188,7 +193,7 @@
 
 <section class="dist__sections">
     <div class="sub__heading ">
-        <h3 class="mb-1">Recommended By</h3>
+        <h3 class="mb-3">Recommended By</h3>
     </div>
 
     <ul class="list-unstyled d-flex justify-content-around recommend">

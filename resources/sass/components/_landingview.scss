@@ -14,7 +14,7 @@
     }
     .heading {
         color: #fff;
-        margin: 10px auto;
+        margin: 30px auto 10px;
         text-transform: uppercase;
     }
     .tagline {
@@ -28,8 +28,10 @@
         border-radius: 10px;
         margin: 0 auto;
         border: none;
+        background-color: #ce6127;
+        color: #fff;
         &:hover {
-            background-color: darken($color: #fff, $amount: 10%);
+            background-color: darken($color: #ce6127, $amount: 10%);
         }
         &:focus,
         &:active {
