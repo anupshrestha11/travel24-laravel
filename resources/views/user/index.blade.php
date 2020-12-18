@@ -36,7 +36,7 @@
     </div>
 </section>
 
-<section class="dist__section p-4 m-0" style="background: #dae0e2" id="destination">
+<section class="dist__section pt-4 m-0" style="background: #dae0e2" id="destination">
 
 
 
@@ -49,19 +49,54 @@
         }
 
         @media (max-width:1570px) {
-            .dist.tabview {
-                max-width: 800px;
+            .dist__card.custom {
+                min-height: unset;
+                height: 200px;
+                position: relative;
+                border-radius: unset;
+                margin: 20px;
+
             }
 
+            @media (max-width:899px) {
+                .dist__card.custom {
+                    width: 235px;
+                    height: 180px;
 
+
+                    margin: 10px;
+                }
+
+            }
+
+            @media(max-width:600px) {
+                .activities {
+                    display: flex;
+
+
+                }
+
+                .activities .custom {
+                    width: 150px !important;
+                    height: 130px;
+                    margin: 5px;
+                }
+
+                .activities.custom .dist__content .dist__name a strong.custom {
+                    font-size: .9rem !important;
+                }
+
+
+
+            }
         }
 
     </style>
-    <div class="dist tabview" style="justify-content: center; ;">
+    <div class="dist mb-3" style="justify-content: center ;">
         @foreach ($countries as $country)
+        <div class="dist__card custom">
 
-        <div class="dist__card" style="min-height: unset; height: 200px; position: relative; border-radius: unset; margin: 20px;">
-            <a href="{{route('view.package',$country->slug)}}" style="height: 100%"><img src="{{url('/countryimage'.'/'.$country->imagename)}}" alt="" class="dist__img" style="height: 100%; min-height: unset; object-fit: cover" />
+            <a href="{{route('view.package',$country->slug)}}" style="height: 100%"><img src="{{url('/countryimage'.'/'.$country->imagename)}}" alt="" class="dist__img " style="height: 100%; min-height: unset; object-fit: cover" />
             </a>
             <div class="dist__content " style="position: absolute; bottom: 0; left: 0; right:0; background: #00000050;">
                 <div class="dist__name">
@@ -83,26 +118,24 @@
     <div class="sub__heading ">
         <h3 class="mb-1 mt-2">Our Activities</h3>
     </div>
-    <div class="dist tabview" style="justify-content: center">
+    <div class="dist activities" style="justify-content: center">
 
-        @foreach ($activities->take(4) as $activity)
+        @foreach ($activities->take(6) as $activity)
 
-        <div class="dist__card" style="min-height: unset; height: 200px; position: relative; border-radius: unset; margin: 20px;">
+        <div class="dist__card custom">
 
             <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}" style="height: 100%"><img src="{{url('/activityimage'.'/'.$activity->image_name)}}" alt="" class="dist__img" style="height: 100%; min-height: unset; object-fit: cover" />
             </a>
             <div class="dist__content " style="position: absolute; bottom: 0; left: 0; right:0; background: #00000050;">
                 <div class="dist__name">
-                    <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}"><strong class="text-white">{{$activity->title}}</strong></a>
+                    <a href="{{ route('view.activity', ['slug'=>$activity->slug])}}"><strong class="text-white custom">{{$activity->title}}</strong></a>
 
                 </div>
             </div>
         </div>
         @endforeach
         @if(count($activities) > 6)
-
         <a class="btn btn-secondary" style=" padding: 10px;" href="{{route('view.activities')}}"> View More Activites</a>
-
         @endif
     </div>
 </section>
@@ -148,21 +181,30 @@
 
         <div class="testimonial__card">
             <div class="testiment__content">
-                <div class="testiment__name">
-                    <strong>{{$testiment->name}}</strong> <small>{{$testiment->country}}</small>
-                </div>
-
-                <div class="d-flex justify-content-between mr-1">
-                    <span class="material-icons rating" style="color: #F3B431">
-                        @for ($i = 0; $i < $testiment->rating; $i++)
-                            star
-                            @endfor
-                    </span>
+                <div class="d-flex align-items-center justify-content-between">
                     <div>
-                        <p class="p-0 m-0">{{$testiment->created_at->diffForHumans()}}</p>
+                        <div class="testiment__name ">
+                            <strong>{{$testiment->name}}</strong> <small>{{ $testiment->country}}</small>
+                        </div>
+                        <div class="d-flex justify-content-between mr-1">
+                            <span class="material-icons rating" style="color: #F3B431">
+                                @for ($i = 0; $i < $testiment->rating; $i++)
+                                    star
+                                    @endfor
+                            </span>
+                        </div>
+                        <div>
+                            <p class="p-0 m-0">{{$testiment->created_at->diffForHumans()}}</p>
+                        </div>
+
+
                     </div>
+                    <img src="{{url('testimonialimage'.'/'.$testiment->image_name)  }}" alt="">
+
+
 
                 </div>
+
 
 
                 <div class="testiment__text">

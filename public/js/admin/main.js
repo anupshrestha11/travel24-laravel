@@ -57,7 +57,10 @@ $(".add").click(() => {
 const image = $("#image");
 image.change(e => {
     console.log(e.target.files);
-    if (e.target.files[0].type !== "image/jpeg") {
+    if (
+        e.target.files[0].type !== "image/jpeg" &&
+        e.target.files[0].type !== "image/png"
+    ) {
         image.replaceWith(image.val("").clone(true));
         alert("file is not allowed");
     } else if (e.target.files[0].size > 2097152) {

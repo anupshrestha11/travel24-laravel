@@ -45,6 +45,11 @@
                         <input type="text" id="country" name="country" class="form-control" required value="{{old('name')}}">
                     </div>
 
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" name="image" id="image" accept=" image/*" class="form-control-file" />
+                    </div>
+
 
                     <div class="form-group">
                         <label for="price">Rating</label>

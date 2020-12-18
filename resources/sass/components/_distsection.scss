@@ -116,6 +116,18 @@
         &__card {
             width: 250px;
             min-height: 300px;
+            .dist__content .dist__name strong {
+                font-size: 1rem;
+            }
+            .dist__content .dist__name strong.custom {
+                font-size: 0.9rem;
+            }
+            .dist__detail {
+                font-size: 0.9rem;
+            }
+            .dist__booknow {
+                padding-top: 15px;
+            }
             .dist__img {
                 width: 100%;
                 height: 150px;

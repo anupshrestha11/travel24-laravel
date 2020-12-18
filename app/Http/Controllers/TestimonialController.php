@@ -37,14 +37,20 @@ class TestimonialController extends Controller {
             'rating'    => 'required|digits:1|digits_between:0,5x',
             'testiment' => 'required',
             'country'   => 'required',
+            'image'     => 'required|image|mimes:jpeg,png,jpg',
         ]);
 
+        $image_name = time() . $request->image->getClientOriginalName();
+
         Testimonial::create([
-            'name'      => $request['name'],
-            'rating'    => $request['rating'],
-            'testiment' => $request['testiment'],
-            'country'   => $request['country'],
+            'name'       => $request['name'],
+            'rating'     => $request['rating'],
+            'testiment'  => $request['testiment'],
+            'country'    => $request['country'],
+            'image_name' => $image_name,
         ]);
+        request()->image->move(public_path('testimonialimage'), $image_name);
+
         return redirect(route('admin.testimonials'));
     }
 
